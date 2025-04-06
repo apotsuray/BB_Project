@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="/index">На главную</a>
+<form th:method="POST" th:action="@{/calculateLucky}" th:object="${luckyDays}">
+    <label for="prize">Выигрыш</label>
+    <input type="text" th:field="*{prize}" id="prize"/>
+    <label th:text="'Результат: ' + ${luckyDays.getResult4()}"></label>
+    <br/>
+    <label for="odd1">Кф1</label>
+    <input type="text" th:field="*{odd1}" id="odd1"/>
+    <label for="sum1">Сумм1</label>
+    <input type="text" th:field="*{sum1}" id="sum1"/>
+    <label th:text="'Результат: ' + ${luckyDays.getResult1()}"></label>
+    <br/>
+    <label for="odd2">Кф2</label>
+    <input type="text" th:field="*{odd2}" id="odd2"/>
+    <label for="sum2">Сумм2</label>
+    <input type="text" th:field="*{sum2}" id="sum2"/>
+    <label th:text="'Результат: ' + ${luckyDays.getResult2()}"></label>
+    <br/>
+    <label for="odd3">Кф3</label>
+    <input type="text" th:field="*{odd3}" id="odd3"/>
+    <label for="sum3">Сумм3</label>
+    <input type="text" th:field="*{sum3}" id="sum3"/>
+    <label th:text="'Результат: ' + ${luckyDays.getResult3()}"></label>
+    <br/>
+    <input type="submit" value="Рассчитать"/>
+</form>
+</body>
+</html>
